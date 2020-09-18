@@ -1,0 +1,4 @@
+image: gitpod/workspace-dotnet:latest
+tasks:
+  - init: 'dotnet run'
+    command: dotnet run
