@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 class Coronatest
 {
@@ -31,11 +33,11 @@ class Coronatest
     }
 
     private int BepaalPrioriteit(Aanvraag aanvraag) {
-        List<String> hogePrioriteitBeroepen = new List<String> {
-            "docent", "zorg"
-        };
+        string[] hogePrioriteitBeroepen = File.ReadAllLines("priolijst_beroepen.txt");
 
-        if (hogePrioriteitBeroepen.Contains(aanvraag.Beroep.ToLower())) return 2;
+        foreach (string beroep in hogePrioriteitBeroepen) {
+            if (beroep.ToLower() == aanvraag.Beroep.ToLower()) return 2;
+        }
 
         return 1;
     }
