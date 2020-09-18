@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 
+// credits: https://www.dotnetlovers.com/article/231/priority-queue
 public class PriorityQueue<T>
 {
     class Node
